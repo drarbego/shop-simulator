@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ActionableItem.tscn" type="PackedScene" id=2]
+
+[node name="World" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 9.03744
+height = 0.254432
+depth = 7.49752
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.354272, 4.76837e-07, 3.09977 )
+
+[node name="ActionableItem" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.748341, 1.02303, -2.09686 )
