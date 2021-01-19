@@ -1,17 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ActionableItem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Simi/Simi.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Store/Store.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World.gd" type="Script" id=5]
+[ext_resource path="res://Interface/HUD.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Spatial"]
-
-[node name="CSGBox" type="CSGBox" parent="."]
-width = 9.03744
-height = 0.254432
-depth = 7.49752
+script = ExtResource( 5 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.354272, 4.76837e-07, 3.09977 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5 )
 
 [node name="ActionableItem" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.748341, 1.02303, -2.09686 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.90464, 1.02303, -6.1652 )
+
+[node name="Store" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
+
+[node name="Simi" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3, 0, -3 )
+
+[node name="Simi2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.1, 0, -3 )
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+[connection signal="display_menu" from="ActionableItem" to="." method="_on_ActionableItem_display_menu"]

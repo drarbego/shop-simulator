@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Interface/HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 256.0
+margin_top = 152.0
+margin_right = -256.0
+margin_bottom = -152.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="MarginContainer"]
+visible = true
+margin_right = 512.0
+margin_bottom = 296.0
+window_title = "Checkout"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 0.783784
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/WindowDialog/ScrollContainer"]
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Cancel" type="Button" parent="MarginContainer/WindowDialog"]
+anchor_left = 0.125
+anchor_top = 0.837838
+anchor_right = 0.375
+anchor_bottom = 0.945946
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Buy" type="Button" parent="MarginContainer/WindowDialog"]
+anchor_left = 0.625
+anchor_top = 0.837838
+anchor_right = 0.875
+anchor_bottom = 0.945946
+text = "Buy!! :-)"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Inventory" type="Button" parent="."]
+anchor_left = 0.78125
+anchor_top = 0.92
+anchor_right = 0.992188
+anchor_bottom = 0.986667
+text = "Inventory"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="InventoryContainer" type="MarginContainer" parent="."]
+anchor_left = 0.78125
+anchor_top = 0.64
+anchor_right = 0.992188
+anchor_bottom = 0.92
+margin_bottom = -3.8147e-06
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="InventoryContainer"]
+visible = true
+margin_right = 216.0
+margin_bottom = 168.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryContainer/WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryContainer/WindowDialog/ScrollContainer"]
+[connection signal="pressed" from="MarginContainer/WindowDialog/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="pressed" from="MarginContainer/WindowDialog/Buy" to="." method="_on_Buy_pressed"]
+[connection signal="pressed" from="Inventory" to="." method="_on_Inventory_pressed"]

@@ -1,12 +1,12 @@
 extends Area
 
 
+signal display_menu(show)
+
 func _on_ActionableItem_body_entered(body):
-	body.action = funcref(self, "execute_action")
+	if body is Character:
+		emit_signal("display_menu", true, body.context)
 
 func _on_ActionableItem_body_exited(body):
-	body.action = null
-
-func execute_action():
-	$NetSuiteClient.create_order()
-	print("action executed")
+	if body is Character:
+		emit_signal("display_menu", false, {})

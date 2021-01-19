@@ -4,7 +4,7 @@
 [ext_resource path="res://Character.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.5, 0.5, 0.5 )
+extents = Vector3( 0.265232, 0.548624, 0.37699 )
 
 [node name="Character" type="KinematicBody"]
 script = ExtResource( 2 )
@@ -17,4 +17,4 @@ shape = SubResource( 1 )
 transform = Transform( -0.963998, 0, -0.265909, 0, 1, 0, 0.265909, 0, -0.963998, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.844842, 0.535016, 0, -0.535016, 0.844842, 0, 1.17756, 1.3823 )
+transform = Transform( 1, 0, 0, 0, 0.844842, 0.535016, 0, -0.535016, 0.844842, 0, 2.17756, 1.3823 )
