@@ -29,6 +29,7 @@ func _update_content(context):
 func _on_Inventory_pressed():
 	var container = $InventoryContainer/WindowDialog/ScrollContainer/VBoxContainer
 	self._delete_children(container)
+	# Not the best way to do it, character related menus should be part of Character.tscn
 	var products = get_node("/root/World/Character").context["products"]
 	self._set_products(products, container)
 	$InventoryContainer/WindowDialog.popup()
