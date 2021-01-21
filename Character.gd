@@ -6,6 +6,7 @@ const SPEED = 5
 
 var velocity = Vector3.ZERO
 var rot_speed = 1.85
+var current_camera = 0
 
 var context = {
 	"products": [],
@@ -31,6 +32,11 @@ func _unhandled_input(event):
 
 	if event.is_action_released("ui_down"):
 		$Shrek/AnimationPlayer.stop(false)
+
+	if event.is_action_pressed("change_camera"):
+		var cameras = $Cameras.get_children()
+		self.current_camera = (self.current_camera + 1) % len(cameras)
+		cameras[self.current_camera].set_current(true)
 
 func get_input(delta):
 	# TODO use vector2 for movement
