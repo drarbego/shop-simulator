@@ -17,7 +17,7 @@ func _delete_children(node):
 func _set_products(products, node):
 	for data in products:
 		var product = product_class.instance()
-		product.init(data["name"], data["desc"], data["price"])
+		product.init(data["name"], data["desc"], str(data["price"]), data["image"])
 		node.add_child(product)
 
 func _update_content(context):

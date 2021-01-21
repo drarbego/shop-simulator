@@ -8,19 +8,10 @@ var velocity = Vector3.ZERO
 var rot_speed = 1.85
 
 var context = {
-	"products": [
-		{
-			"name": "pump",
-			"desc": "algo",
-			"price": "$120.00",
-		},
-		{
-			"name": "pump 2",
-			"desc": "otra cosa",
-			"price": "$300.00",
-		}
-	]
+	"products": [],
 }
+
+signal product_added
 
 func _ready():
 	var anim = $Shrek/AnimationPlayer.get_animation("ArmaturemixamocomLayer0")
@@ -57,6 +48,17 @@ func get_input(delta):
 		velocity.y = -0.1
 	if self.global_transform.origin.y < -0.1:
 		velocity.y = 0.1
+
+func add_product(product_name, desc, price, image_path):
+	self.context["products"].append({
+		"name": product_name,
+		"desc": desc,
+		"price": price,
+		"image": image_path,
+	})
+	emit_signal("product_added")
+	$AuraDust.emitting = true
+	$AuraGround.emitting = true
 
 func _physics_process(delta):
 	get_input(delta)
