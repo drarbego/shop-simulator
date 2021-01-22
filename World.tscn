@@ -23,37 +23,38 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
 
 [node name="Simi" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3, 0, -3 )
+dancing = true
 
 [node name="Simi2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.1, 0, -3 )
+transform = Transform( -0.043412, 0, -0.246202, 0, 0.25, 0, 0.246202, 0, -0.043412, 5.9, 0, -6.1 )
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
 [node name="Products" type="Node" parent="."]
 
 [node name="Valve" parent="Products" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -11.1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0, -8.1 )
 sku = "X70-09444"
 description = "SEAT, VALVE MUD PUMP, FULL OPEN ROUGHNECK API-6 TAPER 4 (API MODIFIED), ENSIGN EQUIP"
 price = 80.0
 image_name = "valve.png"
 
 [node name="Liner" parent="Products" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, -13.4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, -14.2 )
 sku = "X70-09331"
 description = "Gasket, Mudpump, Gardner Denver PXL / PZ11 7500Psi OEM Style, Liner 4.750-6.000 IN Urethane, Ensign Equip"
 price = 20.0
 image_name = "liner.png"
 
 [node name="Piston" parent="Products" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 0, -8.4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -8.1 )
 sku = "X70-09360"
 description = "6\" 7500 PSI Urethane SA Bonded Flex Lip Piston"
 price = 130.77
 image_name = "piston.png"
 
 [node name="Ladder" parent="Products" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999999, 0, -1.1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 0, -10.1 )
 sku = "X39-05616"
 description = "136KG 1,76M Fiberglass Step Ladder "
 price = 280.57

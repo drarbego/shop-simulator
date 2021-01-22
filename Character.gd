@@ -31,9 +31,9 @@ var context = {
 signal product_added
 
 func _ready():
-	var anim = $Shrek/AnimationPlayer.get_animation("ArmaturemixamocomLayer0")
+	var anim = $Shrek/AnimationPlayer.get_animation("Run")
 	anim.set_loop(true)
-	$Shrek/AnimationPlayer.set_current_animation("ArmaturemixamocomLayer0")
+	$Shrek/AnimationPlayer.set_current_animation("Run")
 	$Shrek/AnimationPlayer.stop()
 
 func _unhandled_input(event):
