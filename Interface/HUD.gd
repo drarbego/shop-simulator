@@ -17,20 +17,20 @@ func _delete_children(node):
 func _set_products(products, node):
 	for data in products:
 		var product = product_class.instance()
-		product.init(data["name"], data["desc"], str(data["price"]), data["image"])
+		product.init(data["sku"], data["desc"], str(data["price"]), data["image"])
 		node.add_child(product)
 
 func _update_content(context):
 	var container = $MarginContainer/WindowDialog/ScrollContainer/VBoxContainer
 
 	self._delete_children(container)
-	self._set_products(context["products"], container)
+	self._set_products(context["lines"], container)
 
 func _on_Inventory_pressed():
 	var container = $InventoryContainer/WindowDialog/ScrollContainer/VBoxContainer
 	self._delete_children(container)
 	# Not the best way to do it, character related menus should be part of Character.tscn
-	var products = get_node("/root/World/Character").context["products"]
+	var products = get_node("/root/World/Character").context["lines"]
 	self._set_products(products, container)
 	$InventoryContainer/WindowDialog.popup()
 
@@ -47,3 +47,4 @@ func _on_Cancel_pressed():
 
 func _on_Buy_pressed():
 	emit_signal("place_order", order_data)
+	$MarginContainer/WindowDialog.hide()

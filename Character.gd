@@ -9,7 +9,23 @@ var rot_speed = 1.85
 var current_camera = 0
 
 var context = {
-	"products": [],
+	"lines": [],
+	"payment_data": {
+		"custom_fields": {
+			"cost_period_id": "XYZ",
+		},
+	},
+	"shipping_address": {
+		"wh_region": "houston_warehouse",
+		"phone": "33322164",
+	},
+	"currency": "USD",
+	"ext": "Ensign Energy",
+	"afe_number": "1234",
+	"po_number": "Po - 33",
+	"created_on": "12/25/2020",
+	"requestor": null,
+	"customer_comment": "some comment",
 }
 
 signal product_added
@@ -55,12 +71,15 @@ func get_input(delta):
 	if self.global_transform.origin.y < -0.1:
 		velocity.y = 0.1
 
-func add_product(product_name, desc, price, image_path):
-	self.context["products"].append({
-		"name": product_name,
+func add_product(sku, desc, price, image_path):
+	self.context["lines"].append({
+		"sku": sku,
+		"qty": "1.000000000",
 		"desc": desc,
 		"price": price,
+		"amount": price,
 		"image": image_path,
+		"taxable": false
 	})
 	emit_signal("product_added")
 	$AuraDust.emitting = true

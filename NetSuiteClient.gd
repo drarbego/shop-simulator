@@ -6,12 +6,20 @@ var URL = "http://127.0.0.1:8000/"
 func _ready():
 	self.connect("request_completed", self, "_on_request_completed")
 
-func create_order():
+func create_order(order_data):
 	var headers = ["Content-Type: application/json"]
 
-	var body = to_json(self._get_order_data())
+	var identifier = self._generate_identifier()
+	order_data["identifier"] = identifier
 
+	var body = to_json(order_data)
+
+	print("creating order with id ... ", identifier)
+	print("body ", body)
 	request(URL, headers, true, HTTPClient.METHOD_POST, body)
+
+func _generate_identifier():
+	return "TEST_" + str(OS.get_unix_time())
 
 func _get_order_data():
 	var identifier = "TEST_" + str(OS.get_unix_time())
@@ -29,12 +37,6 @@ func _get_order_data():
 			"phone": "33322164",
 		},
 		"lines": [{
-			"sku": "CALIFORNIA_REFUND_VALUE",
-			"qty": "1.000000000",
-			"rate": "199.90",
-			"amount": "199.90",
-			"taxable": true
-		}, {
 			"sku": "X70-07373",
 			"qty": "1.000000000",
 			"rate": "342.49",
@@ -83,4 +85,6 @@ func _get_order_data():
 func _on_request_completed(result, response_code, headers, body):
 	var response = parse_json(body.get_string_from_utf8())
 	if result == RESULT_SUCCESS:
-		print("response  ", response)
+		print("Order created")
+	else:
+		print("request failed :(")

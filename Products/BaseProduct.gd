@@ -1,6 +1,6 @@
 extends Area
 
-export var product_name := ""
+export var sku := ""
 export var description := ""
 export var price := 0.0
 export var image_name := ""
@@ -14,7 +14,7 @@ func _ready():
 func _on_body_entered(body):
 	if body is Character:
 		body.add_product(
-			product_name,
+			sku,
 			description,
 			price,
 			image_path
@@ -32,5 +32,3 @@ func _get_v_to_character():
 func _process(_delta):
 	var rot_delta = self._get_v_to_character()
 	$Sprite3D.rotation_degrees.y = (rad2deg(rot_delta.angle()) - 90) * -1
-	if Input.is_key_pressed(KEY_T):
-		print(name, " V ", rot_delta, " rot ", $Sprite3D.rotation_degrees.y)
