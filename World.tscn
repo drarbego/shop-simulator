@@ -64,3 +64,4 @@ image_name = "ladder.png"
 [connection signal="product_added" from="Character" to="." method="_on_Character_product_added"]
 [connection signal="display_menu" from="ActionableItem" to="." method="_on_ActionableItem_display_menu"]
 [connection signal="place_order" from="HUD" to="." method="_on_HUD_place_order"]
+[connection signal="orders_received" from="NetSuiteClient" to="." method="_on_NetSuiteClient_orders_received"]

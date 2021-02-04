@@ -8,18 +8,18 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.265232, 0.548624, 0.37699 )
 
-[sub_resource type="Curve" id=12]
+[sub_resource type="Curve" id=2]
 max_value = 2.0
 _data = [ Vector2( 0.0125786, 0.08232 ), 0.0, 0.289813, 0, 0, Vector2( 0.991837, 1.01054 ), -7.62491, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=13]
-curve = SubResource( 12 )
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
 
-[sub_resource type="ParticlesMaterial" id=14]
+[sub_resource type="ParticlesMaterial" id=4]
 direction = Vector3( 0, 0, 0 )
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
-scale_curve = SubResource( 13 )
+scale_curve = SubResource( 3 )
 
 [sub_resource type="SpatialMaterial" id=5]
 flags_transparent = true
@@ -31,19 +31,19 @@ albedo_texture = ExtResource( 3 )
 [sub_resource type="QuadMesh" id=6]
 material = SubResource( 5 )
 
-[sub_resource type="Curve" id=15]
+[sub_resource type="Curve" id=7]
 _data = [ Vector2( 0, 0.00584459 ), 0.0, 0.0, 0, 0, Vector2( 0.987421, 0.537376 ), -6.08784, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=16]
-curve = SubResource( 15 )
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
 
-[sub_resource type="ParticlesMaterial" id=17]
+[sub_resource type="ParticlesMaterial" id=9]
 emission_shape = 2
 emission_box_extents = Vector3( 0.5, 0.5, 0.5 )
 gravity = Vector3( 0, 1, 0 )
 tangential_accel = 1.0
 tangential_accel_random = 1.0
-scale_curve = SubResource( 16 )
+scale_curve = SubResource( 8 )
 
 [sub_resource type="SpatialMaterial" id=10]
 flags_transparent = true
@@ -73,7 +73,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0
 emitting = false
 amount = 1
 one_shot = true
-process_material = SubResource( 14 )
+process_material = SubResource( 4 )
 draw_pass_1 = SubResource( 6 )
 
 [node name="AuraDust" type="Particles" parent="."]
@@ -81,7 +81,7 @@ emitting = false
 amount = 50
 lifetime = 2.0
 one_shot = true
-process_material = SubResource( 17 )
+process_material = SubResource( 9 )
 draw_pass_1 = SubResource( 11 )
 
 [node name="Cameras" type="Spatial" parent="."]

@@ -17,3 +17,8 @@ func _on_ActionableItem_display_menu(show, context):
 func _unhandled_input(event):
 	if event.is_action_released("restart"):
 		get_tree().reload_current_scene()
+	if event.is_action_released("test"):
+		$NetSuiteClient.retrieve_orders(10, 0)
+
+func _on_NetSuiteClient_orders_received(orders):
+	print("RECEIVED ORDERS ", orders)
