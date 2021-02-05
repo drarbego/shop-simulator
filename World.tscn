@@ -21,6 +21,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.90464, 1.02303, -6.1652 )
 
 [node name="Simi" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3, 0, -3 )
+visible = false
 dancing = true
 
 [node name="Simi2" parent="." instance=ExtResource( 3 )]
