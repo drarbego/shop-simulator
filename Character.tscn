@@ -87,9 +87,9 @@ draw_pass_1 = SubResource( 11 )
 [node name="Cameras" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="Cameras"]
-transform = Transform( 1, 0, 0, 0, 0.844842, 0.535016, 0, -0.535016, 0.844842, 0, 2.17756, 1.3823 )
+transform = Transform( 1, 0, 0, 0, 0.91046, 0.413597, 0, -0.413597, 0.91046, 0, 2.41942, 2.68318 )
 
-[node name="Camera3" type="Camera" parent="Cameras"]
+[node name="Camera2" type="Camera" parent="Cameras"]
 transform = Transform( 1, 0, 0, 0, 0.951728, 0.306941, 0, -0.306941, 0.951728, 0, 1.55591, -1.11114 )
 
 [node name="Shrek" parent="." instance=ExtResource( 1 )]

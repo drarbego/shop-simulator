@@ -1,7 +1,7 @@
 extends Control
 
 var slide = 1
-var SLIDES_SIZE = 3
+var SLIDES_SIZE = 8
 
 
 func _on_Next_pressed():
