@@ -21,9 +21,15 @@ _global_script_class_icons={
 [application]
 
 config/name="NetSuiteAPI"
-run/main_scene="res://World.tscn"
+run/main_scene="res://Presentation/Presentation.tscn"
 boot_splash/image="res://assets/splash.png"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/fullscreen=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
