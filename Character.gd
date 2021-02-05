@@ -7,6 +7,7 @@ const SPEED = 5
 var velocity = Vector3.ZERO
 var rot_speed = 1.85
 var current_camera = 0
+var date = OS.get_date()
 
 var context = {
 	"lines": [],
@@ -23,7 +24,7 @@ var context = {
 	"ext": "Ensign Energy",
 	"afe_number": "1234",
 	"po_number": "Po - 33",
-	"created_on": "12/25/2020",
+	"created_on": str(date["month"]) + "/" + str(date["day"]) + "/" + str(date["year"]),
 	"requestor": null,
 	"customer_comment": "some comment",
 }

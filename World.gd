@@ -21,4 +21,4 @@ func _unhandled_input(event):
 		$NetSuiteClient.retrieve_orders(10, 0)
 
 func _on_NetSuiteClient_orders_received(orders):
-	print("RECEIVED ORDERS ", orders)
+	pass

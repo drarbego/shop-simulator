@@ -2,6 +2,9 @@ extends HTTPRequest
 
 var URL = "http://127.0.0.1:8000/"
 
+# Each HttpRequest node should handle it's own request logic, it was an error trying to defne a cliente here
+# RETRIEVE is deprecated, this node should only create
+
 enum {
 	CREATE,
 	RETRIEVE
@@ -22,7 +25,6 @@ func create_order(order_data):
 	var body = to_json(order_data)
 
 	print("creating order with id ... ", identifier)
-	print("body ", body)
 	self.last_action = CREATE
 	request(URL, headers, true, HTTPClient.METHOD_POST, body)
 
@@ -37,12 +39,12 @@ func retrieve_orders(page_size, page_number):
 
 func _on_request_completed(result, response_code, headers, body):
 	if result != RESULT_SUCCESS:
-		print("REQUEST FAILED with " + response_code)
+		print("REQUEST FAILED with " + str(response_code))
 		return
 	
-	print("body ", body.size())
-	var response = parse_json(body.get_string_from_utf8())
 	match last_action:
+		CREATE:
+			print("ORDER CREATED")
 		RETRIEVE:
+			var response = parse_json(body.get_string_from_utf8())
 			emit_signal("orders_received", response)
-

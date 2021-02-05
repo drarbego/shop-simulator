@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Interface/HUD.tres" type="Theme" id=1]
+[ext_resource path="res://Computer/Order.gd" type="Script" id=2]
+
+[node name="Order" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 40 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="memo" type="Label" parent="HBoxContainer"]
+margin_top = 9.0
+margin_bottom = 31.0
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+margin_left = 4.0
+margin_right = 8.0
+margin_bottom = 40.0
+
+[node name="tranid" type="Label" parent="HBoxContainer"]
+margin_left = 12.0
+margin_top = 9.0
+margin_right = 12.0
+margin_bottom = 31.0
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+margin_left = 16.0
+margin_right = 20.0
+margin_bottom = 40.0
+
+[node name="total" type="Label" parent="HBoxContainer"]
+margin_left = 24.0
+margin_top = 9.0
+margin_right = 24.0
+margin_bottom = 31.0
+
+[node name="VSeparator3" type="VSeparator" parent="HBoxContainer"]
+margin_left = 28.0
+margin_right = 32.0
+margin_bottom = 40.0
+
+[node name="trandate" type="Label" parent="HBoxContainer"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 36.0
+margin_bottom = 31.0
